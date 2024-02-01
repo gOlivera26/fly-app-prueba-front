@@ -1,0 +1,59 @@
+/* En tu archivo CSS correspondiente (por ejemplo, get-clientes.component.css) */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 20px;
+    background-color: #f8f9fa; /* Color de fondo más claro */
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; /* Añadir un margen superior para separar del navbar */
+}
+
+h3 {
+    color: #333;
+}
+
+.filter-container {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 10px;
+}
+
+.form-label {
+    color: #555;
+}
+
+.btn-primary,
+.btn-secondary {
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+    background-color: #007bff;
+}
+
+.btn-group {
+    margin-bottom: 10px;
+}
+
+.table {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+th,
+td {
+    text-align: center;
+}
+
+/* Agregar más estilos según tus preferencias */
