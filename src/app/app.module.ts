@@ -7,13 +7,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { GetClientesComponent } from './get-clientes/get-clientes.component';
 import { CreatePasajeroComponent } from './create-pasajero/create-pasajero.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     GetClientesComponent,
-    CreatePasajeroComponent
+    CreatePasajeroComponent,
+    HomeComponent
 
   ],
   imports: [

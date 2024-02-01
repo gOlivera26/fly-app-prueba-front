@@ -1,0 +1,12 @@
+<!-- home.component.html -->
+<div class="containerBtn">
+    <button (click)="toggleComponent('mostrarListadoPasajeros')" [ngClass]="{'active': isComponentVisible('mostrarListadoPasajeros')}" class="buttonComponent">
+      Mostrar Listado
+    </button>
+    <button (click)="toggleComponent('mostrarCrearPasajero')" [ngClass]="{'active': isComponentVisible('mostrarCrearPasajero')}" class="buttonComponent">
+      Mostrar Crear Pasajero
+    </button>
+</div>
+
+<app-get-clientes *ngIf="isComponentVisible('mostrarListadoPasajeros')"></app-get-clientes>
+<app-create-pasajero *ngIf="isComponentVisible('mostrarCrearPasajero')"></app-create-pasajero>

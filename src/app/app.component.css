@@ -1,59 +1,66 @@
+/* Fuentes personalizadas */
+@font-face {
+    font-family: "Nabla";
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "EDPT" 113, "EHLT" 12;
+}
 
+/* Estilos generales del navbar */
 .navbar {
-    background-color: #343a40; 
-    color: #000000; 
-}
-
-.navbar-brand {
-    color: #000000; 
-    font-weight: bold; 
-}
-
-.navbar-brand img {
-    border-radius: 50%; 
-    margin-right: 10px; 
-}
-
-.navbar-nav .nav-link {
-    color: #000000; 
-}
-
-.navbar-toggler-icon {
-    background-color: #ffffff; 
-}
-
-.navbar-toggler {
-    border: none; 
-}
-
-.nav-link:hover {
-    color: #ff9900; 
-}
-
-.nav-link.active {
+    background-color: #343a40;
     color: #000000;
 }
 
-.navbar-toggler:focus {
-    outline: none; 
+.navbar-brand {
+    color: #000000;
+    font-weight: bold;
 }
+
+.navbar-brand img {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Estilos de los enlaces de la barra de navegación */
+.navbar-nav .nav-link {
+    color: #000000;
+    font-size: 25px;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #ff9900;
+    background-color: transparent;
+}
+
+/* Estilos del icono de pasajeros */
+.icono-pasajeros {
+    width: 35px;
+    height: auto;
+    margin-left: 5px;
+}
+
+/* Estilos específicos del botón de hamburguesa en el modo móvil */
+.navbar-toggler-icon {
+    background-color: #ffffff;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+}
+
+/* Fuentes personalizadas para el strong */
 .navbar-brand strong {
     font-family: "Nabla", system-ui;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    font-variation-settings:
-      "EDPT" 100,
-      "EHLT" 12;
-  
+    font-variation-settings: "EDPT" 113, "EHLT" 12;
 }
-
-.navbar-nav a {
-    font-size: 20px; 
-}
-
-
-.navbar-nav a.router-link-active {
-    font-size: 20; /* Ajusta el tamaño de la fuente según tus preferencias */
-}
-
