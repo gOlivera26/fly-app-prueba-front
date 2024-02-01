@@ -35,10 +35,9 @@ export class CreatePasajeroComponent implements OnInit {
       nombre: ['', Validators.required],
       apellido: ['', Validators.required],
       tipoDocumento: [null, Validators.required],
-      numeroDocumento: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
+      numeroDocumento: ['', [Validators.required], [this.pasajeroService.numeroDocumentoValidator()]],
+      email: ['', [Validators.required, Validators.email], [this.pasajeroService.emailValidator()]],
       estado: [true]
-
     });
   }
 

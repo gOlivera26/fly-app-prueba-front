@@ -39,4 +39,14 @@ export class RestService {
         `${this.urlPasajero}/getAllTipoDocumento`
       );
     }
+    public numeroDocumentoExist(numeroDoc: string): Observable<boolean> {
+      return this.httpClient.get<boolean>(
+        `${this.urlPasajero}/numeroDocumentoExist/${numeroDoc}`
+      );
+    }
+    public emailExist(email: string): Observable<boolean> {
+      return this.httpClient.get<boolean>(
+        `${this.urlPasajero}/emailExist/${email}`
+      );
+    }
 }

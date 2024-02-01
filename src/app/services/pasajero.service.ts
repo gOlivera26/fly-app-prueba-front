@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { Observable, BehaviorSubject, of, debounceTime, switchMap, map, catchError } from 'rxjs';
+import { RestService } from './rest.service';
+import { AbstractControl, AsyncValidatorFn, ValidationErrors } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PasajeroService {
 
-  constructor() { }
+  constructor(private restService: RestService) { }
 
   private pasajeroSubject = new BehaviorSubject<any[]>([]);
   pasajeros$: Observable<any[]> = this.pasajeroSubject.asObservable();
@@ -29,4 +31,27 @@ export class PasajeroService {
    tipoDocs.push(tipoDoc);
    this.tipoDocSubject.next(tipoDocs);
  }
+
+ numeroDocumentoValidator(): AsyncValidatorFn {
+  return (control: AbstractControl): Observable<ValidationErrors | null> => {
+    return of(control.value).pipe(
+      debounceTime(300),
+      switchMap(value => this.restService.numeroDocumentoExist(value)),
+      map(res => (res ? { numeroDocumentoExist: true } : null)),
+      catchError(() => of(null))
+    );
+  };
+}
+
+emailValidator(): AsyncValidatorFn {
+  return (control: AbstractControl): Observable<ValidationErrors | null> => {
+    return of(control.value).pipe(
+      debounceTime(300),
+      switchMap(value => this.restService.emailExist(value)),
+      map(res => (res ? { emailExist: true } : null)),
+      catchError(() => of(null))
+    );
+  };
+}
+
 }
