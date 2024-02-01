@@ -29,4 +29,14 @@ export class RestService {
         `${this.urlPasajero}/getPasajeroByEstado/${estado}`
       );
     }
+    public postPasajero(pasajero: any): Observable<any> {
+      return this.httpClient.post<any>(
+        `${this.urlPasajero}/createPasajero`, pasajero
+      );
+    }
+    public getTipoDocumento(): Observable<any[]> {
+      return this.httpClient.get<any[]>(
+        `${this.urlPasajero}/getAllTipoDocumento`
+      );
+    }
 }

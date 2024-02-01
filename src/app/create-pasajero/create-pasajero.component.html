@@ -1,1 +1,157 @@
-<p>create-pasajero works!</p>
+<!-- create-pasajero.component.html -->
+<div class="container big-cart">
+    <h3>Crear Pasajero</h3>
+    <form [formGroup]="pasajeroForm" class="form" (ngSubmit)="crearPasajero()">
+        <div class="row">
+            <!-- Primera columna -->
+            <div class="col-md-6">
+                <div class="form-group mt-3">
+                    <label for="nombre">Nombre:</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="nombre"
+                        placeholder="Nombre del Pasajero"
+                        formControlName="nombre"
+                        required
+                        [ngClass]="{
+                        'is-invalid':
+                            pasajeroForm &&
+                            pasajeroForm.controls['nombre'] &&
+                            pasajeroForm.controls['nombre'].invalid &&
+                            pasajeroForm.controls['nombre'].touched
+                        }"
+                    />
+                    <div
+                        *ngIf="pasajeroForm.controls['nombre'].errors?.['required']"
+                        class="invalid-feedback"
+                    >
+                        El nombre es requerido.
+                    </div>
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="tipoDocumento">Tipo de Documento:</label>
+                    <select
+                        class="form-control"
+                        id="tipoDocumento"
+                        formControlName="tipoDocumento"
+                        required
+                        [ngClass]="{
+                        'is-invalid':
+                            pasajeroForm &&
+                            pasajeroForm.controls['tipoDocumento'] &&
+                            pasajeroForm.controls['tipoDocumento'].invalid &&
+                            pasajeroForm.controls['tipoDocumento'].touched
+                        }"
+                    >
+                        <option value="" selected disabled>
+                            Seleccione un tipo de documento
+                        </option>
+                        <option *ngFor="let tipo of tiposDocumento" [value]="tipo.id">{{ tipo.descripcion }}</option>
+                    </select>
+                    <div
+                        *ngIf="pasajeroForm.controls['tipoDocumento'].errors?.['required']"
+                        class="invalid-feedback"
+                    >
+                        El tipo de documento es requerido.
+                    </div>
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="email">Email:</label>
+                    <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        placeholder="Email del Pasajero"
+                        formControlName="email"
+                        required
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                        [ngClass]="{
+                        'is-invalid':
+                            pasajeroForm &&
+                            pasajeroForm.controls['email'] &&
+                            pasajeroForm.controls['email'].invalid &&
+                            pasajeroForm.controls['email'].touched
+                        }"
+                    />
+                    <div
+                        *ngIf="pasajeroForm.controls['email'].errors?.['required']"
+                        class="invalid-feedback"
+                    >
+                        El email es requerido.
+                    </div>
+
+                    <div
+                        *ngIf="pasajeroForm.controls['email'].errors?.['email']"
+                        class="invalid-feedback"
+                    >
+                        El formato del email es incorrecto.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Segunda columna -->
+            <div class="col-md-6">
+                <div class="form-group mt-3">
+                    <label for="apellido">Apellido:</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="apellido"
+                        placeholder="Apellido del Pasajero"
+                        formControlName="apellido"
+                        required
+                        [ngClass]="{
+                        'is-invalid':
+                            pasajeroForm &&
+                            pasajeroForm.controls['apellido'] &&
+                            pasajeroForm.controls['apellido'].invalid &&
+                            pasajeroForm.controls['apellido'].touched
+                        }"
+                    />
+                    <div
+                        *ngIf="pasajeroForm.controls['apellido'].errors?.['required']"
+                        class="invalid-feedback"
+                    >
+                        El apellido es requerido.
+                    </div>
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="numeroDocumento">Número de Documento:</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="numeroDocumento"
+                        placeholder="Número de Documento"
+                        formControlName="numeroDocumento"
+                        required
+                        [ngClass]="{
+                        'is-invalid':
+                            pasajeroForm &&
+                            pasajeroForm.controls['numeroDocumento'] &&
+                            pasajeroForm.controls['numeroDocumento'].invalid &&
+                            pasajeroForm.controls['numeroDocumento'].touched
+                        }"
+                    />
+                    <div
+                        *ngIf="pasajeroForm.controls['numeroDocumento'].errors?.['required']"
+                        class="invalid-feedback"
+                    >
+                        El número de documento es requerido.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Otros campos según tu modelo -->
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-success mt-3">Crear</button>
+    </form>
+</div>
