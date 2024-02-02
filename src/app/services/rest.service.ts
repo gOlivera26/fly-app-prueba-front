@@ -7,8 +7,11 @@ import {Observable} from 'rxjs';
 })
 export class RestService {
   private urlPasajero = 'http://localhost:8081/pasajero';
+  private urlAvion = 'http://localhost:8081/avion'
   constructor(private httpClient: HttpClient) { }
 
+
+  //pasajeros
   public getPasajeros(): Observable<any[]> {
     return this.httpClient.get<any[]>(`${this.urlPasajero}/getAllPasajeros`);
   }
@@ -47,6 +50,24 @@ export class RestService {
     public emailExist(email: string): Observable<boolean> {
       return this.httpClient.get<boolean>(
         `${this.urlPasajero}/emailExist/${email}`
+      );
+    }
+
+    //aviones
+    public getTipoAvion(): Observable<any[]> {
+      return this.httpClient.get<any[]>(`${this.urlAvion}/getAllTipoAviones`);
+    }
+    public getAviones(): Observable<any[]> {
+      return this.httpClient.get<any[]>(`${this.urlAvion}/getAllAviones`);
+    }
+    public getAvionesPorMatricula(matricula: string): Observable<any[]> {
+      return this.httpClient.get<any[]>(
+        `${this.urlAvion}/getAvionByMatricula/${matricula}`
+      );
+    }
+    getAvionPorTipoAvion(id: number): Observable<any[]> {
+      return this.httpClient.get<any[]>(
+        `${this.urlAvion}/getAvionByTipoAvion/${id}`
       );
     }
 }

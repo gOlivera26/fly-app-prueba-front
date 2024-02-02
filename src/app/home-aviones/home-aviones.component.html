@@ -1,0 +1,9 @@
+<!-- home.component.html -->
+<div class="navbar-buttons">
+    <button (click)="toggleComponent('mostrarListadoAviones')" [ngClass]="{'active': isComponentVisible('mostrarListadoAviones')}" class="buttonComponent">
+        Mostrar Listado
+    </button>
+</div>
+
+<app-get-aviones *ngIf="isComponentVisible('mostrarListadoAviones')"></app-get-aviones>
+

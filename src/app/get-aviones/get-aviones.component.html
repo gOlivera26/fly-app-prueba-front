@@ -1,0 +1,54 @@
+<!-- get-aviones.component.html -->
+<div class="container big-cart">
+    <h3>Listado de Aviones</h3>
+
+    <!-- Filtros de Búsqueda (puedes adaptar según tus necesidades) -->
+    <div class="row mb-3 filter-container">
+        <!-- Filtro por matrícula -->
+        <div class="col-md-6 d-flex flex-column">
+            <label for="filtroMatricula" class="form-label">Filtrar por matrícula:</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="filtroMatricula" placeholder="Matrícula" [(ngModel)]="matricula" />
+                <button class="btn btn-primary" id="buscarAvionesBtn" (click)="filtrarAviones()">Buscar</button>
+                <button class="btn btn-secondary ms-2" (click)="borrarFiltro()">Borrar filtro</button>
+            </div>
+        </div>
+
+        <!-- Espaciado -->
+        <div class="col-md-1"></div>
+
+        <!-- Filtro por Tipo de Avión -->
+        <div class="col-md-5 d-flex flex-column">
+            <label for="filtroTipoAvion" class="form-label">Filtrar por Tipo de Avión</label>
+            <div class="btn-group" role="group">
+                <!-- Puedes cargar dinámicamente los tipos de avión desde tu modelo -->
+                <button *ngFor="let tipo of tiposAvion" class="btn btn-info me-2" (click)="filtrarPorTipoAvion(tipo.id)">{{ tipo.descripcion }}</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lista de Aviones -->
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Matrícula</th>
+                <th>Tipo de Avión</th>
+                <th>Capacidad</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="listaAviones">
+            <tr *ngFor="let avion of avionesFiltro">
+                <td>{{ avion.matricula }}</td>
+                <td>{{ avion.tipoAvion.descripcion }}</td>
+                <td>{{ avion.capacidad }}</td>
+                <td>
+                    <!-- Puedes agregar acciones específicas para los aviones si es necesario -->
+                    <button class="btn btn-primary btn-sm" (click)="realizarAccionAvion(avion)">
+                        Realizar Acción
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

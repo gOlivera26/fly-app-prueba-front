@@ -1,3 +1,4 @@
+<!-- get-pasajeros.component.html -->
 <div class="container big-cart">
     <h3>Listado de Pasajeros</h3>
 
@@ -9,7 +10,7 @@
             <div class="input-group">
                 <input type="text" class="form-control" id="filtroNumeroDocumento" placeholder="Número de Documento" [(ngModel)]="numeroDoc" />
                 <button class="btn btn-primary" id="buscarClientesBtn" (click)="filtrarPersonas()">Buscar</button>
-                <button *ngIf="listaFiltrada" class="btn btn-secondary ms-2" (click)="borrarFiltro()">Borrar filtro</button>
+                <button class="btn btn-secondary ms-2" (click)="borrarFiltro()">Borrar filtro</button>
             </div>
         </div>
 

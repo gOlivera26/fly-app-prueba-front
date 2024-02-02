@@ -8,6 +8,8 @@ import { CommonModule } from '@angular/common';
 import { GetClientesComponent } from './get-clientes/get-clientes.component';
 import { CreatePasajeroComponent } from './create-pasajero/create-pasajero.component';
 import { HomeComponent } from './home/home.component';
+import { HomeAvionesComponent } from './home-aviones/home-aviones.component';
+import { GetAvionesComponent } from './get-aviones/get-aviones.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { HomeComponent } from './home/home.component';
     AppComponent,
     GetClientesComponent,
     CreatePasajeroComponent,
-    HomeComponent
+    HomeComponent,
+    HomeAvionesComponent,
+    GetAvionesComponent
 
   ],
   imports: [
