@@ -27,7 +27,7 @@
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
-    color: #ff9900; /* Texto de los enlaces en el navbar al pasar el mouse o activo */
+    color: #ff9900; 
     background-color: transparent;
 }
 
@@ -38,7 +38,6 @@
     margin-left: 5px;
 }
 
-/* Estilos específicos del botón de hamburguesa en el modo móvil */
 .navbar-toggler-icon {
     background-color: #ffffff;
 }
@@ -58,14 +57,6 @@
     border-radius: 20px;
 }
 
-  .main-container {
-    background-image: url('../assets/img/FlyApp.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    overflow-y: auto;
-}
 
 /* Resto de tus estilos para el navbar, si los hay */
 .header {
