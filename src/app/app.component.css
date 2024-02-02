@@ -1,38 +1,33 @@
-/* Fuentes personalizadas */
-@font-face {
-    font-family: "Nabla";
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    font-variation-settings: "EDPT" 113, "EHLT" 12;
+/* app.component.css */
+.background-container {
+    background-image: url('../assets/img/FlyApp.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Ajusta la altura al 100% de la vista */
+    overflow-y: auto; /* Permite desplazarse si el contenido es más largo que la vista */
 }
 
-/* Estilos generales del navbar */
-.navbar {
-    background-color: #343a40;
-    color: #000000;
+/* Ajustes para el contenido dentro del fondo */
+.navbar-expand-lg {
+    background: linear-gradient(to bottom, rgba(189, 25, 19, 0.8), rgb(7, 10, 14)); /* Degradado para el navbar */
+    color: #ffffff; /* Texto en el navbar */
+    transition: background 0.3s ease; /* Transición suave del fondo */
 }
 
 .navbar-brand {
-    color: #000000;
-    font-weight: bold;
+    color: #ffffff; /* Texto de la marca en el navbar */
 }
 
-.navbar-brand img {
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-/* Estilos de los enlaces de la barra de navegación */
 .navbar-nav .nav-link {
-    color: #000000;
+    color: #ffffff; /* Texto de los enlaces en el navbar */
     font-size: 25px;
     transition: color 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
-    color: #ff9900;
+    color: #ff9900; /* Texto de los enlaces en el navbar al pasar el mouse o activo */
     background-color: transparent;
 }
 
@@ -56,11 +51,29 @@
     outline: none;
 }
 
-/* Fuentes personalizadas para el strong */
-.navbar-brand strong {
-    font-family: "Nabla", system-ui;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    font-variation-settings: "EDPT" 113, "EHLT" 12;
+.logo {
+    width: 70px;
+    height: auto;
+    margin-left: 5px;
+    border-radius: 20px;
+}
+
+  .main-container {
+    background-image: url('../assets/img/FlyApp.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+/* Resto de tus estilos para el navbar, si los hay */
+.header {
+    background: url(../assets/img/FlyApp.png) no-repeat center;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+  .header .navbar {
+  background-color: transparent !important;
 }

@@ -1,11 +1,13 @@
+/* home.component.css */
 .containerBtn {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 10px 100px;
+    padding: 150px 100px;
     gap: 10px;
+    
 }
 
 .buttonComponent {
@@ -13,26 +15,26 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    width: 180px; /* Reduce el ancho a 180px */
-    height: 80px; /* Reduce la altura a 80px */
-    font-size: 16px; /* Reduce el tamaño de fuente a 16px */
+    width: 180px;
+    height: 80px;
+    font-size: 16px;
     font-weight: 600;
     text-align: center;
     cursor: pointer;
-    border: 2px solid #f39c12; /* Cambia el color del borde a amarillo (#f39c12) */
+    border: 2px solid #f39c12;
     border-radius: 5px;
-    color: #f39c12; /* Cambia el color del texto a amarillo (#f39c12) */
+    color: #f39c12;
     background-color: white;
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 .buttonComponent:hover {
-    background-color: #f39c12; /* Cambia el color de fondo al amarillo (#f39c12) en el hover */
-    color: white; /* Cambia el color del texto a blanco en el hover */
-    border-color: #e67e22; /* Cambia el color del borde al naranja (#e67e22) en el hover */
+    background-color: #f39c12;
+    color: white;
+    border-color: #e67e22;
 }
 
 .active {
-    background-color: #f39c12; /* Cambia el color de fondo al amarillo (#f39c12) cuando está activo */
-    color: white; /* Cambia el color del texto a blanco cuando está activo */
+    background-color: #f39c12;
+    color: white;
 }

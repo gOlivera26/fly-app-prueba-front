@@ -5,7 +5,7 @@
     </button>
     <button (click)="toggleComponent('mostrarCrearPasajero')" [ngClass]="{'active': isComponentVisible('mostrarCrearPasajero')}" class="buttonComponent">
       Mostrar Crear Pasajero
-    </button>
+    </button> 
 </div>
 
 <app-get-clientes *ngIf="isComponentVisible('mostrarListadoPasajeros')"></app-get-clientes>

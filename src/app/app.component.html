@@ -1,25 +1,72 @@
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nabla:EDPT@113&display=swap" rel="stylesheet">
+<!-- app.component.html -->
+<!DOCTYPE html>
+<html lang="en">
 
-<nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="../assets/img/logo-de-avion-con-el-nombre-de-la-empresa-flyapp-upscaled.jpg" alt="FlyApp Logo" width="70" height="70" class="d-inline-block align-text-top">
-      <strong>FlyApp</strong>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    
-    
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link" routerLink="/home" routerLinkActive="active"><img src="../assets/img/icono-pasajero2.png" alt="Icono Pasajeros" class="icono-pasajeros">Pasajeros</a>
-        
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlyApp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nabla:EDPT@113&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="app.component.css">
+    <!-- Bootstrap CSS (Include the Bootstrap CSS link here) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyIdG4W5SRIK1R9SjkBb5p8f+J/DL4lfs"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="background-container">
+      <div class="main-container">
+        <!-- Bootstrap Navbar -->
+       
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">
+                    <img class="logo" src="../assets/img/flyapplogo.png" alt="FlyApp Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav m-auto">
+                      <a class="nav-link" routerLink="/home" routerLinkActive="active">
+                        <img src="../assets/img/icono-pasajero2.png" alt="Icono Pasajeros" class="icono-pasajeros">Pasajeros
+                    </a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#">Disabled</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search"
+                            aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+       
       </div>
-    </div>
-  </div>
-</nav>
 
-<router-outlet></router-outlet>
+        <router-outlet></router-outlet>
+    </div>
+
+  
+</body>
+
+</html>
