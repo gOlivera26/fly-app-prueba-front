@@ -8,6 +8,16 @@
     overflow-y: auto; /* Permite desplazarse si el contenido es más largo que la vista */
 }
 
+.header {
+    background: url(../assets/img/FlyApp.png) no-repeat center;
+  
+    background-attachment: fixed;
+}
+
+  .header .navbar {
+  background-color: transparent !important;
+}
+
 /* Ajustes para el contenido dentro del fondo */
 .navbar-expand-lg {
     background: linear-gradient(to bottom, rgba(189, 25, 19, 0.8), rgb(7, 10, 14)); /* Degradado para el navbar */
@@ -57,14 +67,3 @@
     border-radius: 20px;
 }
 
-
-/* Resto de tus estilos para el navbar, si los hay */
-.header {
-    background: url(../assets/img/FlyApp.png) no-repeat center;
-    background-size: cover;
-    min-height: 100vh;
-}
-
-  .header .navbar {
-  background-color: transparent !important;
-}

@@ -1,5 +1,5 @@
 /* home.component.css */
-.containerBtn {
+.navbar-buttons {
     display: flex;
     justify-content: center;
     align-items: center;
