@@ -3,19 +3,19 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-top: 20px;
-    background-color: #f8f9fa; /* Color de fondo más claro */
+    background-color: #f8f9fa; 
 }
 
 .container {
-    background-color: #ffffff;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 20px; /* Añadir un margen superior para separar del navbar */
+    margin-top: 20px; 
 }
 
 h3 {
-    color: #333;
+    color: #ffffff;
 }
 
 .filter-container {
@@ -27,7 +27,7 @@ h3 {
 }
 
 .form-label {
-    color: #555;
+    color: #ffffff;
 }
 
 .btn-primary,
@@ -47,13 +47,11 @@ h3 {
 
 .table {
     background-color: #ffffff;
-    border: 1px solid #ddd;
+    border: 1px solid #beadad;
     border-radius: 5px;
 }
 
-th,
-td {
+.table th,
+.table td {
     text-align: center;
 }
-
-/* Agregar más estilos según tus preferencias */

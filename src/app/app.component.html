@@ -1,24 +1,16 @@
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FlyApp</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nabla:EDPT@113&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="app.component.css">
-    <!-- Bootstrap CSS (Include the Bootstrap CSS link here) -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyIdG4W5SRIK1R9SjkBb5p8f+J/DL4lfs"
-        crossorigin="anonymous">
-
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+    
 <body>
     <div class="background-container">
     
-        <!-- Bootstrap Navbar -->
         <header class="header">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="#">
-                    <img class="logo" src="../assets/img/flyapplogo.png" alt="FlyApp Logo">FlyApp
+                    <img class="logo" src="../assets/img/flyapplogo.png" alt="FlyApp Logo>"><strong>FlyApp</strong>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,20 +42,13 @@
                                 <a class="dropdown-item" href="#">Something else here</a>
                             </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#">Disabled</a>
-                        </li>
+                      
                     </ul>
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search"
-                            aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>
+                   
                 </div>
             </nav>
         </header>
-   
-        <!-- Your Router Outlet -->
+        
         <router-outlet></router-outlet>
     </div>
 
