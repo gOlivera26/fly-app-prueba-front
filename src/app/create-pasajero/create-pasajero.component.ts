@@ -36,7 +36,7 @@ export class CreatePasajeroComponent implements OnInit {
       apellido: ['', Validators.required],
       tipoDocumento: [null, Validators.required],
       numeroDocumento: ['', [Validators.required], [this.pasajeroService.numeroDocumentoValidator()]],
-      email: ['', [Validators.required, Validators.email], [this.pasajeroService.emailValidator()]],
+     email: ['', [Validators.required, Validators.email], [this.pasajeroService.emailValidator()]],
       estado: [true]
     });
   }
@@ -48,8 +48,8 @@ export class CreatePasajeroComponent implements OnInit {
   
     if (this.pasajeroForm.valid) {
       const tipoDocumentoId = this.pasajeroForm.value.tipoDocumento;
-  
-      // Construir el objeto pasajero
+
+      // Crear el pasajero
       this.pasajero = {
         ...this.pasajeroForm.value,
         tipoDocumento: {
@@ -57,43 +57,37 @@ export class CreatePasajeroComponent implements OnInit {
           descripcion: this.tiposDocumento.find((tipo) => tipo.id === tipoDocumentoId)?.descripcion || '',
         },
       };
+      Swal.fire({
+        title: "¿Estás seguro de que deseas guardar los cambios?",
+        showDenyButton: true,
+        showCancelButton: true,
+        confirmButtonText: "Guardar",
+        denyButtonText: `No guardar`
+      }).then((result) => {
+        if (result.isConfirmed) {
+          // Realizar la acción si el usuario elige guardar
+          this.restService.postPasajero(this.pasajero).subscribe(
+            (response) => {
+              console.log('Pasajero Creado con Éxito', response);
+              this.pasajeroForm.reset();
+              this.pasajeroService.agregarPasajero(this.pasajero);
   
-      this.restService.postPasajero(this.pasajero).subscribe(
-        (response) => {
-          console.log('Pasajero Creado con Éxito', response);
-          this.pasajeroForm.reset();
-          this.pasajeroService.agregarPasajero(this.pasajero);
-  
-          Swal.fire({
-            icon: 'success',
-            title: 'Pasajero creado con éxito',
-            confirmButtonText: 'Aceptar',
-            confirmButtonColor: '#808080',
-          });
-        },
-        (error) => {
-          console.log(error);
-          if (error.error.message.includes('El Email esta en uso')) {
-            Swal.fire({
-              icon: 'error',
-              title: 'El Email ingresado ya está en uso',
-              text: 'Por favor, ingrese un email diferente',
-              confirmButtonText: 'Aceptar',
-              confirmButtonColor: '#808080',
-            });
-          } else if (error.error.message.includes('Numero de documento en uso')) {
-            Swal.fire({
-              icon: 'error',
-              title: 'El número de documento ingresado ya está en uso',
-              text: 'Por favor, ingrese un número de documento diferente',
-              confirmButtonText: 'Aceptar',
-              confirmButtonColor: '#808080',
-            });
-          }
+              Swal.fire({
+                icon: 'success',
+                title: 'Pasajero creado con éxito',
+                confirmButtonText: 'Aceptar',
+                confirmButtonColor: '#808080',
+              });
+            },
+            (error) => {
+              console.log(error);
+            }
+          );
+        } else if (result.isDenied) {
+          Swal.fire("Cambios no guardados", "", "info");
         }
-      );
+      });
     }
   }
-  
   
 }
